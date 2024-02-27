@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1612166248_94-p-fon-minimalizm-fioletovii-158.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial;
+}
+
+
+.container {
+  padding: 30px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+input {
+  background: rgba(246,125,156, 0.6);
+  border: none;
+  border-radius: 20px;
+  padding: 3px 20px;
+  font-size: 28px;
+  width: 70%;
+  text-align: center; 
+  color: #fff;
+}
+
+button {
+  background: rgba(246,125,156, 0.6);
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  padding: 5px 30px;
+  text-align: 20px;
+}
+
+.content_information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px 50px 0 50px;
+}
+
+.content_information_left > h1{
+  font-size: 35px; 
+  text-align: left;
+}
+
+.content_information_left > p{
+  color: #fff;
+  font-size: 55px; 
+  margin: 0;
+  text-align: left;
+}
+
+.content_information_left > div > span{
+  color: #fff;
+  font-size: 25px; 
+  margin: 0;
+  text-align: left;
+  font-weight: 400;
+
+}
+
+.content_information_left > div{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+
+.content_information_rigth {
+  background: rgba(227, 77, 149, 0.65);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.content_information_rigth > p {
+  color: #fff;
+  font-size: 22px; 
+  margin: 10px 0 0;
+  position: relative;
+}
+
+.error {
+  color: #fff;
+  font-size:40px;
+}
