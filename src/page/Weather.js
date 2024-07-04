@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useEffect } from "react";
 
 export default function Weather() {
 
@@ -9,13 +10,15 @@ export default function Weather() {
 
     const [error, setError] = useState(null);
 
+    const [time, setTime] = useState('');
+
     const WWW = 'https://api.openweathermap.org/data/2.5/weather';
     const APIKEY = '25fa81762c3215a26b2b8277f4a2c9ad';
 
 
     const getWeather = async () => {
         if (!city) {
-            setError('Please enter a city');
+            setError('Please specify the city correctly');
             setWeatherDate(null)
             return
         }
@@ -26,10 +29,32 @@ export default function Weather() {
             setWeatherDate(response.data)
             setError(null)
         } catch (error) {
-            setError('Please enter a city');
+            setError('Please specify the city correctly');
             console.error(error)
         }
     }
+
+
+
+
+    const formatLocalTime = (timezone) => {
+        const localDate = new Date(Date.now() + timezone * 1000);
+        return localDate.toUTCString().slice(-12, -4);
+    };
+
+
+    useEffect(() => {
+        let timer;
+        if (weatherDate) {
+            timer = setInterval(() => {
+                setTime(formatLocalTime(weatherDate.timezone))
+            }, 1000);
+        }
+
+        return () => clearInterval(timer)
+    }, [weatherDate])
+
+
 
     return (
         <>
@@ -53,21 +78,23 @@ export default function Weather() {
                 <div className="content_information">
 
                     <div className="content_information_left">
-                        <h1>{weatherDate.name} / {weatherDate.sys.country}</h1>
-                        <p>{weatherDate.main.temp}°</p>
+                        <h2>{weatherDate.name} / {weatherDate.sys.country}</h2>
+                        <p className="temp">{weatherDate.main.temp}°</p>
 
 
                         <div> <span>{weatherDate.weather[0].main}</span>
                             {weatherDate.weather[0].icon && (
-                                <img src={`https://openweathermap.org/img/w/${weatherDate.weather[0].icon}.png`} />
+                                <img src={`https://openweathermap.org/img/w/${weatherDate.weather[0].icon}.png`} alt={weatherDate.weather[0].description} />
                             )}
                         </div>
+                        <p className="time">Time: {time}</p>
                     </div>
 
                     <div className="content_information_rigth">
-                        <p>Wind: {weatherDate.wind.speed} m/c</p>
-                        <p>Humidity: {weatherDate.main.humidity} %</p>
-                        <p>Visibility: {weatherDate.visibility} m</p>
+                        <p><span>Wind:</span> {weatherDate.wind.speed} m/c</p>
+                        <p><span>Humidity:</span> {weatherDate.main.humidity} %</p>
+                        <p><span>Visibility:</span> {weatherDate.visibility} m</p>
+                        <p><span>Sea Level:</span> {weatherDate.main.sea_level} m</p>
                     </div>
 
                 </div>

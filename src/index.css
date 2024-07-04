@@ -7,7 +7,8 @@ body {
   background-size: cover;
   width: 100%;
   height: 100vh;
-  font-family: Arial;
+  /* font-family: OCR A Std, monospace; */
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 
@@ -26,10 +27,24 @@ body {
   gap: 10px;
 }
 
-h1 {
+h1, h2 {
   margin: 0;
   text-align: center;
   color: #fff;
+  font-size: 38px;
+  padding: 10px 0 0 0;
+}
+
+h2 {
+  text-align: left;
+  font-size: 40px;
+  padding: 0;
+}
+
+@media (max-width: 580px){
+  h1 {
+    font-size: 34px;
+  }
 }
 
 input {
@@ -37,10 +52,11 @@ input {
   border: none;
   border-radius: 20px;
   padding: 3px 20px;
-  font-size: 28px;
-  width: 70%;
+  font-size: 30px;
+  width: 280px;
   text-align: center; 
   color: #fff;
+  text-transform: capitalize;
 }
 
 button {
@@ -50,6 +66,7 @@ button {
   color: #fff;
   padding: 5px 30px;
   text-align: 20px;
+  font-size: 18px;
 }
 
 .content_information {
@@ -60,25 +77,48 @@ button {
   padding: 25px 50px 0 50px;
 }
 
+@media (max-width: 580px){
+  .content_information {
+    display: fixed;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 25px 0 25px;
+  }
+}
+
+
 .content_information_left > h1{
   font-size: 35px; 
   text-align: left;
 }
 
-.content_information_left > p{
+.content_information_left p, span{
   color: #fff;
-  font-size: 55px; 
-  margin: 0;
   text-align: left;
+  margin: 0;
 }
 
-.content_information_left > div > span{
+.temp {
+  font-size: 50px;
+}
+
+.time {
+  font-size: 30px; 
+}
+
+.content_information_left span{
   color: #fff;
-  font-size: 25px; 
+  font-size: 26px; 
   margin: 0;
   text-align: left;
   font-weight: 400;
 
+}
+
+.content_information_left img{
+  margin: 0;
+  width: 50px;
+  height: 50px;
 }
 
 .content_information_left > div{
@@ -97,9 +137,9 @@ button {
   padding: 8px;
 }
 
-.content_information_rigth > p {
+.content_information_rigth p {
   color: #fff;
-  font-size: 22px; 
+  font-size: 24px; 
   margin: 10px 0 0;
   position: relative;
 }
