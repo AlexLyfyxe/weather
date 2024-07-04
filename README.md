@@ -1,2 +1,2 @@
-## Weather React App [GitHub Pages](https://weather-online-kg.netlify.app).
+### Weather React App [My website](https://weather-online-kg.netlify.app).
 > name and info city
