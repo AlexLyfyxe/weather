@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-image: url("https://balthazar.club/o/20008-fioletovye-oboi-priroda.html");
+  background: linear-gradient(135deg, #fff5f5 0%, #fed7e2 40%, #bee3f8 100%);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
